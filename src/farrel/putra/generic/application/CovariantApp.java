@@ -7,15 +7,15 @@ public class CovariantApp {
     public static void main(String[] args) {
 
         MyData<String> stringMyData = new MyData<>("Farrel");
-        process(stringMyData);
+        process(stringMyData); //covariant
 
-        //MyData<? extends Object> myData = stringMyData;
-        MyData<?> myData = stringMyData;
+        //MyData<? extends Object> myData = stringMyData; //covariant
+        MyData<?> myData = stringMyData; //covariant
 
     }
 
-    //public static void process(MyData<? extends Object> myData) {
-    public static void process(MyData<?> myData) {
+    //public static void process(MyData<? extends Object> myData) { //covariant
+    public static void process(MyData<?> myData) { //covariant
         System.out.println(myData.getData());
         //myData.setData("Putra"); // NOT ALLOWED
     }
